@@ -1,0 +1,159 @@
+@import 'footer.css';
+
+
+header {
+    background-color: #ADD8E6;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    padding: 0 20px; /* Ajout de padding pour un meilleur espacement des éléments */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ajout d'une ombre légère */
+}
+
+.head a {
+    color: #fff;
+    margin-right: 0px;
+    text-decoration: none;
+    font-weight: bold; /* Ajout de mise en gras pour les liens */
+    transition: color 0.3s; /* Ajout d'une transition pour le changement de couleur */
+}
+
+.head a:hover {
+    color: #4169E1; /* Changer la couleur en bleu lors du survol */
+}
+
+
+header img {
+    max-height: 90px; /* ajustez la taille selon vos besoins */
+    max-width: 90px;
+    max-width: ; /* pour maintenir la proportion */
+    margin-left: 20px; /* ajustez selon votre mise en page */
+    padding: 1%;
+}
+
+.logo{
+  width: 150px;
+  height: 150px;
+  border-radius:80px ;
+  margin: 1px 40px; ;
+  cursor: pointer;
+}
+.groscarre {
+    max-width: 700px;
+    margin: 0 auto; /* marge de 0 pixels sur le haut et le bas de l'élément, et une marge automatique sur les côtés gauche et droit. La valeur auto appliquée aux marges horizontales centreront l'élément sur la page*/
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+h1 {
+    text-align: center;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 
+    padding: 1em;
+    margin-bottom: 2em;
+}
+
+/* Donne un style au titre du fieldset */
+legend {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+}
+
+/* Donne un style aux champs de formulaire */
+input[type="text"] {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Donne un style au bouton de soumission */
+input[type="submit"] {
+    border: 0;
+	padding: 10px 20px;
+	color: #fff;
+	border-radius: 4px;
+	font-size: 16px;
+	font-family: Arial, sans-serif;
+	cursor: pointer;
+    background-color: #008CBA;
+    color: #fff;
+}
+
+/* Donne un style aux champs de formulaire en erreur */
+input:invalid
+{
+    border-color: #f00;
+}
+
+form
+{  /*display: grid et grid-template-columns: 1fr 1fr créent une grille avec deux colonnes de largeur égale. La propriété grid-gap: 20px ajoute un espace de 20 pixels entre les cellules de la grille.*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+}
+
+fieldset:nth-of-type(1) label,
+fieldset:nth-of-type(1) input
+ {
+    grid-column: 1 / 2;
+}
+
+fieldset:nth-of-type(2) label,
+fieldset:nth-of-type(2) input {
+    grid-column: 2 / 3;
+}
+
+.footer {
+    margin-top: auto; /* Place le footer en bas de la page */
+    background-color: #333;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 1px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    margin: 10px;
+    padding: 10px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+
+.footer-section ul, .footer-section p {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}

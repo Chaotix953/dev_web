@@ -1,0 +1,219 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #081c37;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.banner {
+    width: 100%;
+    height: 110%;
+    background-image: url(../img/bg1.jpg);
+    background-size: cover;
+    background-position: center;
+
+
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    margin: 0px 50px;;
+    cursor: pointer;
+}
+
+.nvbar {
+    width: 100%;
+    margin: 0;
+    padding: 40px 0;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.nvbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.nvbar ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: currentColor;
+    text-transform: uppercase;
+}
+
+.nvbar ul li:hover::after {
+    width: 100%;
+}
+
+.content {
+    position: absolute;
+    height: 100%;
+    top: 30%;
+    left: 35%;
+    text-align: center;
+}
+
+.content h1 {
+    color: ghostwhite;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 70px;
+    margin-top: 80px;
+}
+
+.content p {
+    margin: 20px auto;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #191970;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 25px;
+    background-color: #191970;
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #1E90FF;
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    margin: 10px;
+    padding: 10px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+
+.footer-section ul, .footer-section p {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.dropdown p {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.menu-vertical {
+    position: flex;
+    list-style: none;
+    flex-direction: column;
+    left: 10px;
+
+    top: 20%;
+    height: auto; /* Changement de height en auto pour permettre au menu de s'adapter à son contenu */
+    max-height: 90%; /* Limite de la hauteur pour éviter le débordement */
+    background-color: #f8f9fa; /* Couleur de fond légèrement plus claire */
+    border: 1px solid #ced4da; /* Légère modification de la couleur de la bordure */
+    width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Réduction de l'espace intérieur pour un aspect plus épuré */
+    text-align: center;
+    line-height: 3.5; /* Espacement entre les lignes augmenté pour une meilleure lisibilité */
+    border-radius: 40px; /* Augmentation du rayon de la bordure pour des coins plus arrondis */
+    transition: all 0.3s ease;
+}
+
+
+/* Ajout de style pour les éléments de menu */
+.menu-vertical a {
+    text-decoration: none;
+    color: #495057; /* Couleur de texte légèrement plus foncée */
+    display: block;
+    padding: 8px 0; /* Réduction de l'espace entre les éléments */
+    transition: background-color 0.3s ease;
+}
+
+.menu-vertical a:hover {
+
+    background-color: #e9ecef; /* Changement de couleur de fond au survol */
+    color: #333; /* Changement de couleur de texte au survol */
+}
+
+/* Style pour le titre du menu */
+.menu-vertical h2 {
+    margin-top: 0; /* Suppression de la marge supérieure par défaut */
+    margin-bottom: 10px; /* Ajout de marge inférieure pour l'équilibre visuel */
+    font-size: 18px; /* Augmentation de la taille de la police */
+    color: #343a40; /* Couleur de titre légèrement plus foncée */
+}
