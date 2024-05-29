@@ -26,31 +26,7 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 </head>
 <body>
-<header>
-    <img src="../img/logo.jpg" class="logo">
-    <h1> solepied </h1>
-    <div class="head" style="display: flex">
-        <a style="margin: 2px" href="./index.php">Accueil</a>
-        <a style="margin: 2px" href="#">Nouveautés</a>
-        <a style="margin: 2px" href="./product.php">Produits</a>
-        <?php
-        if (isset($_SESSION['username'])) { ?>
-            <a style="margin-right: 2px" href="logout.php">logout</a>
-            <?php
-        } else { ?>
-            <a style="margin-right: 2px" href="./login.php">connexion</a>
-            <?php
-        } ?>
-        <a style="margin-right: 2px" href="./panier.php">Panier</a>
-        <?php if($_SESSION['user']['is_admin']) {?>
-            <a href="./categories.php">Gestion categories</a>
-            <a href="./products.php">Gestion products</a>
-        <?php }?>
-    </div>
-
-    <script src="../js/script.js"></script>
-    <script src="../js/script2.js"></script>
-</header>
+<?php require 'header.php' ?>
 <main class="container mt-5">
 
     <!-- Button trigger modal -->

@@ -31,27 +31,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des produits</title>
-    <meta charset="utf-8">
     <link rel="stylesheet" href="../css/page_recherche.css">
-    <style>
-        body {
-            width: 100%;
-            height: 100%;
-            background-image: url(../img/bg2.jpg);
-            background-size: cover;
-            background-attachment: scroll;
-        }
-    </style>
 </head>
 
 <body>
     <?php require 'header.php';?>
 
-    <main>
+    <main class="product-list">
         <?php foreach ($products as $index => $product) { ?>
             <div class="product">
                 <div class="zoom-container">
@@ -79,6 +71,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </main>
 
     <script>
+        function toggleStock(button) {
+            var stockElement = button.nextElementSibling;
+            stockElement.classList.toggle('hidden');
+        }
+
         function incrementQuantity(button) {
             var container = button.parentNode;
             var quantityDisplay = container.querySelector('.quantity-input');
@@ -109,6 +106,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 button.disabled = true;
             }
         }
+
+        document.querySelectorAll('.toggle-stock').forEach(button => {
+            button.addEventListener('click', () => {
+                const stockInfo = button.nextElementSibling;
+                stockInfo.classList.toggle('hidden');
+            });
+        });
     </script>
 </body>
 

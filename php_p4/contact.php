@@ -58,80 +58,54 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="../css/contact.css">
 </head>
 <body>
-<header>
-    <img src="../img/logo.jpg" class="logo">
-    <h1> solepied </h1>
-    <div class="head">
-        <a href="./index.php">Accueil</a>
-        <a href="#">Nouveautés</a>
-        <a href="./product.php">Produits</a>
-        <?php
-        if (isset($_SESSION['username'])) { ?>
-            <li><a href="logout.php">logout</a></li>
-            <?php
-        } else { ?>
-            <li><a href="./login.php">connexion</a></li>
-            <?php
-        } ?>
-        <a href="./panier.php">Panier</a>
-    </div>
+<?php require 'header.php';?>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../js/script.js"></script>
-    <script src="../js/script2.js"></script>
-</header>
-
-<main>
-    <section id="Service client"> <!--deux sections distinctes,-->
+<main class="container mt-5">
+    <section id="Service client">
         <h2>Service client</h2>
         <p>
             Notre équipe de service client est là pour répondre à toutes vos questions et vous aider à résoudre tout
-            problème que vous pourriez rencontrer.
-            Nous avons rassemblé ici quelques informations qui pourraient vous être utiles : <br> <br>
-
-
-            <b> Politique de retour : </b>Si vous n'êtes pas entièrement satisfait de votre achat, vous avez la
+            problème que vous pourriez rencontrer. Nous avons rassemblé ici quelques informations qui pourraient vous
+            être utiles : <br><br>
+            <b>Politique de retour :</b> Si vous n'êtes pas entièrement satisfait de votre achat, vous avez la
             possibilité de le retourner dans un délai de 10 jours. Veuillez noter que les frais de retour sont à votre
             charge. <br>
-            <b> Politique de remboursement : </b> Si vous remplissez les conditions pour un remboursement, nous vous
+            <b>Politique de remboursement :</b> Si vous remplissez les conditions pour un remboursement, nous vous
             rembourserons le montant total de votre achat dans un délai de 5 jours. <br>
-            <b> Service après-vente : </b> Notre équipe dédiée au service après-vente est là pour vous aider en cas de
+            <b>Service après-vente :</b> Notre équipe dédiée au service après-vente est là pour vous aider en cas de
             problème avec votre produit après l'achat. N'hésitez pas à nous contacter pour toute assistance
             supplémentaire. <br>
-            <b> Heures d'ouverture : </b>Notre équipe est disponible du lundi au vendredi, de 9h à 18h. Veuillez noter
-            que nous sommes fermés le week-end ainsi que les jours fériés.<br> <br>
+            <b>Heures d'ouverture :</b> Notre équipe est disponible du lundi au vendredi, de 9h à 18h. Veuillez noter
+            que nous sommes fermés le week-end ainsi que les jours fériés.<br><br>
             Nous sommes présents à chaque étape de votre processus d'achat pour vous offrir notre aide et notre soutien.
-            N'hésitez pas à nous contacter si vous avez la moindre question ou la moindre préoccupation.</p>
+            N'hésitez pas à nous contacter si vous avez la moindre question ou la moindre préoccupation.
+        </p>
     </section>
 
-    <section id="Contactez-nous" class="container mt-5">
+    <section id="Contactez-nous" class="contact-form mt-5">
         <h2 class="text-center mb-4">Contactez-nous</h2>
         <form id="contactForm" action="contact.php" method="post">
             <div class="form-group">
                 <label for="firstName">Prénom:</label>
                 <input type="text" id="firstName" name="firstName" class="form-control">
-                <span class="error text-danger"><?php
-                    echo isset($errors['firstName']) ? $errors['firstName'] : ''; ?></span> <!-- Message d'erreur -->
+                <span class="error text-danger"><?php echo isset($errors['firstName']) ? $errors['firstName'] : ''; ?></span>
             </div>
             <div class="form-group">
                 <label for="lastName">Nom:</label>
                 <input type="text" id="lastName" name="lastName" class="form-control">
-                <span class="error text-danger"><?php
-                    echo isset($errors['lastName']) ? $errors['lastName'] : ''; ?></span>
+                <span class="error text-danger"><?php echo isset($errors['lastName']) ? $errors['lastName'] : ''; ?></span>
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" class="form-control">
-                <span class="error text-danger"><?php
-                    echo isset($errors['email']) ? $errors['email'] : ''; ?></span>
+                <span class="error text-danger"><?php echo isset($errors['email']) ? $errors['email'] : ''; ?></span>
             </div>
             <div class="form-group">
                 <label>Genre:</label>
                 <div class="form-check">
                     <input type="radio" id="male" name="gender" value="male" class="form-check-input">
                     <label for="male" class="form-check-label">Homme</label>
-                    <span class="error text-danger"><?php
-                        echo isset($errors['gender']) ? $errors['gender'] : ''; ?></span>
+                    <span class="error text-danger"><?php echo isset($errors['gender']) ? $errors['gender'] : ''; ?></span>
                 </div>
                 <div class="form-check">
                     <input type="radio" id="female" name="gender" value="female" class="form-check-input">
@@ -150,65 +124,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <option value="professionnel">Professionnel</option>
                     <option value="autre">Autre</option>
                 </select>
-                <span class="error text-danger"><?php
-                    echo isset($errors['occupation']) ? $errors['occupation'] : ''; ?></span>
+                <span class="error text-danger"><?php echo isset($errors['occupation']) ? $errors['occupation'] : ''; ?></span>
             </div>
             <div class="form-group">
                 <label for="dob">Date de Naissance:</label>
                 <input type="date" id="dob" name="dob" class="form-control">
-                <span class="error text-danger"><?php
-                    echo isset($errors['dob']) ? $errors['dob'] : ''; ?></span>
+                <span class="error text-danger"><?php echo isset($errors['dob']) ? $errors['dob'] : ''; ?></span>
             </div>
             <div class="form-group">
                 <label for="subject">Sujet du Mail:</label>
                 <input type="text" id="subject" name="subject" class="form-control">
-                <span class="error text-danger"><?php
-                    echo isset($errors['subject']) ? $errors['subject'] : ''; ?></span>
+                <span class="error text-danger"><?php echo isset($errors['subject']) ? $errors['subject'] : ''; ?></span>
             </div>
             <div class="form-group">
                 <label for="message">Contenu du Mail:</label>
                 <textarea id="message" name="message" class="form-control"></textarea>
-                <span class="error text-danger"><?php
-                    echo isset($errors['message']) ? $errors['message'] : ''; ?></span>
+                <span class="error text-danger"><?php echo isset($errors['message']) ? $errors['message'] : ''; ?></span>
             </div>
             <div class="text-center">
                 <button type="submit" class="btn btn-primary">Envoyer</button>
             </div>
         </form>
     </section>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
 </main>
 
+<?php require 'footer.php';?>
 
-<footer class="footer">
-    <div class="footer-content">
-        <div class="footer-section">
-            <h3>Plan du site</h3>
-            <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Chaussures de ville</a></li>
-                <li><a href="#">Sneakers</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h3>Mentions légales</h3>
-            <p><a href="#">Lire les mentions</a></p>
-            <p><a href="#">© 2024 SolePied. Tous droits réservés.</a></p>
-        </div>
-        <div class="footer-section">
-            <h3>Siège social :</h3>
-            <p>123 Rue de la Chaussure,
-                <br>
-                75000 Paris, <br>
-                France</p>
-        </div>
-    </div>
-</footer>
 </body>
 </html>

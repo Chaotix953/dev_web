@@ -4,7 +4,6 @@ require './db.php';
 $stmt = $pdo->prepare("SELECT * FROM categories");
 $stmt->execute();
 $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +15,7 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="../css/header.css">
 </head>
 <body>
-    <header>
+    <header class="header">
         <div id="navbar" class="nvbar">
             <img src="../img/logo.jpg" class="logo" alt="SolePied Logo">
             <ul class="nav-list">
@@ -45,6 +44,3 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </header>
 </body>
 </html>
-
-
-

@@ -1,20 +1,17 @@
-/* style.css */
+/* header.css */
 
-/* Reset some default styles */
 body, ul, li {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-/* Basic styling for the body */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
     color: #333;
 }
 
-/* Styling the header */
 header {
     background-color: #007bff;
     color: #fff;
@@ -22,7 +19,6 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Navbar styling */
 .nvbar {
     display: flex;
     align-items: center;
@@ -32,14 +28,12 @@ header {
     padding: 0 20px;
 }
 
-/* Logo styling */
 .logo {
-    max-height: 100px; /* Adjust the height as needed */
+    max-height: 50px;
     height: auto;
-    width: auto; /* Ensure the aspect ratio is maintained */
+    width: auto;
 }
 
-/* Navigation list styling */
 .nav-list {
     display: flex;
     align-items: center;
@@ -47,6 +41,7 @@ header {
 
 .nav-list li {
     margin-left: 20px;
+    position: relative;
 }
 
 .nav-list a {
@@ -54,19 +49,17 @@ header {
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
+    padding: 15px 20px;
+    display: block;
 }
 
 .nav-list a:hover {
-    text-decoration: underline;
+    background-color: #0056b3;
 }
 
-/* Dropdown styling */
-.dropdown {
-    position: relative;
-}
-
-.dropbtn {
-    cursor: pointer;
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
+    display: block;
 }
 
 .dropdown-content {
@@ -93,11 +86,7 @@ header {
     background-color: #ddd;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Responsive styling */
+/* Responsive design */
 @media (max-width: 768px) {
     .nvbar {
         flex-direction: column;

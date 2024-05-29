@@ -1,0 +1,141 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header .logo {
+    max-height: 60px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.header .nav-link {
+    color: #fff;
+    margin-left: 10px;
+}
+
+.header .nav-link:hover {
+    color: #d1ecf1;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.product {
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.product img:hover {
+    transform: scale(1.1);
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin: 10px 0;
+}
+
+.price {
+    color: #007bff;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.stock {
+    margin: 10px 0;
+    color: #555;
+}
+
+.hidden {
+    display: none;
+}
+
+.quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.quantity-input {
+    margin: 0 10px;
+    font-size: 1.2em;
+    min-width: 30px;
+    text-align: center;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.add-to-cart {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.zoom-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.zoomable-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.zoom-container:hover .zoomable-image {
+    transform: scale(1.2);
+}

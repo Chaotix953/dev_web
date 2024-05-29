@@ -43,60 +43,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Page de recherche</title>
-    <meta charset=”utf-8″>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/connexion.css">
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'inscription</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/register.css">
 </head>
 <body>
-<header>
-    <img src="../img/logo.jpg" class="logo">
-    <h1> solepied </h1>
-    <div class="head" style="display: flex">
-        <a style="margin: 2px" href="./index.php">Accueil</a>
-        <a style="margin: 2px" href="#">Nouveautés</a>
-        <a style="margin: 2px" href="./product.php">Produits</a>
-        <?php
-        if (isset($_SESSION['username'])) { ?>
-            <a style="margin-right: 2px" href="logout.php">logout</a>
-            <?php
-        } else { ?>
-            <a style="margin-right: 2px" href="./login.php">connexion</a>
-            <?php
-        } ?>
-        <a style="margin-right: 2px" href="./panier.php">Panier</a>
+<?php require 'header.php'; ?>
+
+<main class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Inscription</h2>
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <label for="username">Nom d'utilisateur :</label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email :</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Mot de passe :</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <span class="error text-danger">
+                            <?php echo isset($_SESSION['register_error']) ? $_SESSION['register_error'] : ''; ?>
+                        </span>
+                        <button type="submit" class="btn btn-primary btn-block mt-3">Inscription</button>
+                        <div class="text-center mt-3">
+                            <a href="./login.php">Déjà un compte? Connectez-vous ici</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+</main>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../js/script.js"></script>
-    <script src="../js/script2.js"></script>
-</header>
-
-
-<div class="">
-
-    <form action="" method="post">
-         <span class="error text-danger"><?php
-             echo isset($_SESSION['login_error']) ? $_SESSION['login_error'] : ''; ?></span>
-        <div class="form-group">
-            <label for="username">Nom d'utilisateur :</label>
-            <input class="form-control" type="text" id="username" name="username" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email :</label>
-            <input class="form-control" type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="password">Mot de passe :</label>
-            <input class="form-control" type="password" id="password" name="password" required>
-        </div>
-        <button type="submit">Connexion</button>
-        <a class="" href="/login.php">login</a>
-    </form>
-</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
